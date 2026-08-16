@@ -9,12 +9,12 @@ const navItems = [
   { label: 'Coupons', path: '/admin/coupons' },
   { label: 'Reports', path: '/admin/reports' },
   { label: 'Settings', path: '/admin/settings' },
-  { label: 'Users', path: '/admin/receptionists' },
+  { label: 'Receptionists', path: '/admin/receptionists' }, // Maps 'Users' in sidebar directly to your receptionists page
 ];
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-[#1E2530] text-slate-300 flex flex-col h-screen border-r border-slate-800">
+    <aside className="w-64 bg-[#1E2530] text-slate-300 flex flex-col h-screen border-r border-slate-800 shrink-0">
       {/* Brand Header */}
       <div className="h-16 flex items-center px-6 gap-3 border-b border-slate-800/60">
         <div className="w-7 h-7 rounded-full border-2 border-[#D96B43] flex items-center justify-center">
@@ -32,7 +32,7 @@ export default function Sidebar() {
             className={({ isActive }) =>
               `flex items-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                 isActive
-                  ? 'bg-[#D96B43] text-white shadow-sm'
+                  ? 'bg-[#D96B43] text-white shadow-xs'
                   : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
               }`
             }
