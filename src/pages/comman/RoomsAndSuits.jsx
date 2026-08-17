@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Rooms = () => {
+const RoomsAndSuits = () => {
   return (
-    <div>Rooms</div>
+    <div>RoomsAndSuits</div>
   )
 }
 
-export default Rooms
+export default RoomsAndSuits
