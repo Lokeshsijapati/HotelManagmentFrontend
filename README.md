@@ -44,3 +44,20 @@ npm install tailwindcss @tailwindcss/vite
 ```
 
 
+#### use react-router-dom for Routing
+
+[click for documentation](https://reactrouter.com/)
+
+```
+npm install react-router-dom
+
+```
+
+#### use react icons for for icons
+- don't use emoji or other unkown stuff
+[click for website](https://react-icons.github.io/react-icons//)
+
+```
+npm install react-icons
+
+```
