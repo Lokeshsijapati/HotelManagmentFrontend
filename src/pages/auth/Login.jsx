@@ -93,8 +93,8 @@ const Login = () => {
           <div className="flex flex-col h-full justify-center">
           
             <div className="flex items-center justify-center gap-2 mb-6 md:hidden">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md">
-                <FiHome className="w-4 h-4 text-white" />
+               <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg">
+                <img src={Athenura_Circle_Logo} alt="" />
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
                 Athenura
