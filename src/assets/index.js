@@ -1,0 +1,1 @@
+// all images upload on cloudinary and past thier link for webiste will load the buttery feel
