@@ -25,11 +25,11 @@ const Login = () => {
         <div className="hidden md:flex w-full md:w-1/2 p-8 lg:p-12 flex-col justify-between bg-black/30 backdrop-blur-sm border-r border-white/10">
           <div>
             <div className="flex items-center gap-2 mb-10 lg:mb-12">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-xl flex items-center justify-center shadow-lg">
                 <img src={Athenura_Circle_Logo} alt="" />
               </div>
-              <span className="text-white font-bold text-xl lg:text-2xl tracking-tight">
-                Athenura
+              <span className="text-white font-bold text-2xl lg:text-2xl tracking-tight">
+                आतिथ्य
               </span>
               <span className="text-amber-400 text-[10px] lg:text-xs font-semibold uppercase tracking-wider ml-1 lg:ml-2 bg-amber-400/20 px-2 py-1 rounded-full">
                 Premium
@@ -96,8 +96,8 @@ const Login = () => {
                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg">
                 <img src={Athenura_Circle_Logo} alt="" />
               </div>
-              <span className="text-white font-bold text-lg tracking-tight">
-                Athenura
+              <span className="text-white text-2xl font-bold text-lg tracking-tight">
+                आतिथ्य
               </span>
               <span className="text-amber-400 text-[10px] font-semibold uppercase tracking-wider ml-1 bg-amber-400/20 px-2 py-0.5 rounded-full">
                 Premium
