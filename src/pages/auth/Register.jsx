@@ -1,20 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiUser, FiMail, FiLock, FiHome, FiKey, FiUserPlus } from "react-icons/fi";
+import { Athenura_Circle_Logo, Bedroom_image_login_Register } from "../../assets";
 
-// Placeholder image – replace with your actual import
-// import { BEDROOM_REGISTER_IMAGE } from '../../assets';
-const BEDROOM_REGISTER_IMAGE =
-  "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
 
 const Register = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-3 md:p-4 relative overflow-hidden">
-      {/* Background Image with Blur – mobile friendly */}
+    
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${BEDROOM_REGISTER_IMAGE})`,
+          backgroundImage: `url(${Bedroom_image_login_Register})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -23,17 +20,18 @@ const Register = () => {
         }}
       />
 
-      {/* Dark Overlay for readability */}
+     
       <div className="absolute inset-0 z-0 bg-black/60" />
 
-      {/* Glassmorphism Container – fully responsive */}
+     
       <div className="relative z-10 w-full max-w-6xl flex flex-col md:flex-row rounded-2xl md:rounded-3xl overflow-hidden backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl">
-        {/* Left side – Hotel Brand (hidden on small, stacked on md+) */}
+        
         <div className="hidden md:flex w-full md:w-1/2 p-8 lg:p-12 flex-col justify-between bg-black/30 backdrop-blur-sm border-r border-white/10">
           <div>
-            <div className="flex items-center gap-3 mb-10 lg:mb-12">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg">
-                <FiHome className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+            <div className="flex items-center gap-2 mb-10 lg:mb-12">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shadow-lg">
+              
+                <img src={Athenura_Circle_Logo} alt="" />
               </div>
               <span className="text-white font-bold text-xl lg:text-2xl tracking-tight">
                 Athenura
@@ -93,10 +91,8 @@ const Register = () => {
           </div>
         </div>
 
-        {/* Right side – Register Form (full width on mobile) */}
         <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-10 lg:p-12 bg-black/20 backdrop-blur-sm">
           <div className="flex flex-col h-full justify-center">
-            {/* Mobile brand hint (visible only on small screens) */}
             <div className="flex items-center justify-center gap-2 mb-6 md:hidden">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md">
                 <FiHome className="w-4 h-4 text-white" />
@@ -119,7 +115,6 @@ const Register = () => {
             </div>
 
             <form className="w-full max-w-sm mx-auto space-y-4 sm:space-y-5">
-              {/* Full Name Field */}
               <div className="space-y-1.5">
                 <label className="text-white/80 text-xs sm:text-sm font-medium block text-left">
                   Full Name
@@ -134,7 +129,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Email Field */}
+        
               <div className="space-y-1.5">
                 <label className="text-white/80 text-xs sm:text-sm font-medium block text-left">
                   Email Address
@@ -149,7 +144,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Password Field */}
+            
               <div className="space-y-1.5">
                 <label className="text-white/80 text-xs sm:text-sm font-medium block text-left">
                   Password
@@ -164,7 +159,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Confirm Password Field */}
+             
               <div className="space-y-1.5">
                 <label className="text-white/80 text-xs sm:text-sm font-medium block text-left">
                   Confirm Password
@@ -179,7 +174,7 @@ const Register = () => {
                 </div>
               </div>
 
-              {/* Secret Key Field - Optional */}
+             
               <div className="space-y-1.5">
                 <label className="text-white/80 text-xs sm:text-sm font-medium block text-left">
                   Secret Key <span className="text-amber-400/50 text-[10px]">(Optional - Admin only)</span>
@@ -197,7 +192,7 @@ const Register = () => {
                 </p>
               </div>
 
-              {/* Create Account Button */}
+
               <button
                 type="submit"
                 className="w-full py-3 sm:py-3.5 px-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold rounded-xl shadow-lg shadow-amber-500/30 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-sm sm:text-base"
