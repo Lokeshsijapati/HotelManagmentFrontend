@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Bar - Contact & Hours */}
+     
       <div 
         className={`bg-amber-600 text-white text-sm py-1.5 px-4 sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -73,7 +73,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navbar */}
       <nav 
         className={`bg-white shadow-md sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -82,7 +81,6 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex justify-between items-center h-16 md:h-20">
-            {/* Logo */}
             <Link to="/" className="flex items-center gap-2 flex-shrink-0">
               <MdOutlineLocalHotel className="text-amber-600 text-2xl md:text-3xl" />
               <span className="text-xl md:text-2xl font-bold text-gray-800 whitespace-nowrap">
@@ -90,7 +88,6 @@ const Navbar = () => {
               </span>
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <ul className="flex items-center gap-8">
                 <li>
@@ -135,7 +132,6 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              {/* Desktop Right Icons */}
               <div className="flex items-center gap-4">
                 <button className="text-gray-600 hover:text-amber-600 transition-colors">
                   <FaSearch className="text-lg" />
@@ -155,7 +151,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile Hamburger Button */}
             <button
               onClick={toggleMenu}
               className="md:hidden text-gray-700 hover:text-amber-600 transition-colors ml-auto"
@@ -168,7 +163,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu */}
+         
           <div
             className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
               isOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0"

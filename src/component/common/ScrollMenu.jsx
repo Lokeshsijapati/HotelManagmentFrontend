@@ -60,7 +60,6 @@ const ScrollMenu = () => {
 
   return (
     <div className="relative w-full max-w-6xl mx-auto px-4 py-6">
-      {/* Left Arrow */}
       {showLeftArrow && (
         <button
           onClick={() => scroll('left')}
@@ -72,8 +71,6 @@ const ScrollMenu = () => {
           </svg>
         </button>
       )}
-
-      {/* Right Arrow */}
       {showRightArrow && (
         <button
           onClick={() => scroll('right')}
@@ -85,8 +82,6 @@ const ScrollMenu = () => {
           </svg>
         </button>
       )}
-
-      {/* Scrollable Menu Container */}
       <div
         ref={containerRef}
         className="flex gap-3 overflow-x-auto scroll-smooth pb-4 hide-scrollbar"
@@ -101,8 +96,6 @@ const ScrollMenu = () => {
           </button>
         ))}
       </div>
-
-      {/* Optional: Scroll indicator dots */}
       <div className="flex justify-center gap-2 mt-4">
         {menuItems.map((_, index) => (
           <div

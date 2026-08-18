@@ -1,15 +1,15 @@
 import React from 'react'
-import { FaConciergeBell, FaStar, FaUsers, FaShieldAlt, FaArrowRight } from 'react-icons/fa';
+import { FaStar, FaUsers, FaShieldAlt, FaArrowRight } from 'react-icons/fa';
 import { MdOutlineLocalHotel, MdRoomService } from 'react-icons/md';
 import { RiHotelBedLine } from 'react-icons/ri';
+import { flower_Image } from '../../assets';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <section className="container mx-auto px-[8em] py-12 md:py-20 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+    <div className="min-h-screen max-h-fit bg-white">
+      <section className="container mx-auto px-[8em] py-10 md:py-20 flex flex-col md:flex-row items-center gap-12 md:gap-16">
         <div className="flex-1 space-y-6">
           
-
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
             Manage Your Hotel
             <span className="block text-amber-600">With Excellence</span>
@@ -125,6 +125,16 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+     <div className="">
+       <div className="text-center items-center flex flex-col">
+        <img src={flower_Image} alt="" className="w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20 object-contain" />
+        <h3 className='text-xl'>Star Quiality</h3>
+        <h1 className='text-3xl text-amber-600 font-semibold'>why choose us...?</h1>
+      </div>
+     </div>
+
+
     </div>
   )
 }

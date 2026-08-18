@@ -49,7 +49,6 @@ const RoomCard = ({
     <div className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-2 border border-gray-100/50">
       
 
-      {/* Availability Badge */}
       <div className={`absolute top-4 right-4 z-20 px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-lg backdrop-blur-sm ${
         isAvailable 
           ? 'bg-emerald-500/90 text-white' 
@@ -61,10 +60,8 @@ const RoomCard = ({
         </span>
       </div>
 
-      {/* Favorite Button */}
      
 
-      {/* Room Image */}
       <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
         <img 
           src={image} 
@@ -72,37 +69,27 @@ const RoomCard = ({
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           loading="lazy"
         />
-        
-        {/* Image Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         
-        {/* Price Tag on Image */}
         <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
           <span className="text-white text-lg font-bold">${price}</span>
           <span className="text-white/60 text-xs ml-1">/ night</span>
         </div>
-
-        {/* Rating on Image */}
         <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10">
           <FaStar className="text-yellow-400 w-3.5 h-3.5" />
           <span className="text-white text-sm font-semibold">{rating}</span>
           <span className="text-white/50 text-xs">({reviews} reviews)</span>
         </div>
       </div>
-
-      {/* Room Details */}
       <div className="p-6">
-        {/* Room Name */}
         <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors duration-300">
           {name}
         </h3>
 
-        {/* Room Description */}
         <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2 min-h-[40px]">
           {description}
         </p>
 
-        {/* Room Specs */}
         <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
           <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-full">
             <FaBed className="text-amber-500 w-4 h-4" />
@@ -118,7 +105,6 @@ const RoomCard = ({
           </div>
         </div>
 
-        {/* Amenities */}
         <div className="flex flex-wrap gap-2 mb-5">
           {amenities.map((amenity, index) => {
             const config = amenityConfig[amenity];
@@ -137,7 +123,6 @@ const RoomCard = ({
           })}
         </div>
 
-        {/* Action Buttons */}
         <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
           <Link 
             to={`/rooms/${id}`}
