@@ -7,6 +7,8 @@ import Bookings from '../pages/admin/Bookings';
 import Customers from '../pages/admin/Customers';
 import Payments from '../pages/admin/Payments';
 import Coupons from '../pages/admin/Coupons';
+import Reports from '../pages/admin/Reports';
+import Settings from '../pages/admin/Settings';
 
 export default function AppRoutes() {
   return (
@@ -20,6 +22,8 @@ export default function AppRoutes() {
         <Route path="customers" element={<Customers />} />
         <Route path="payments" element={<Payments />} />
         <Route path="coupons" element={<Coupons />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   );
