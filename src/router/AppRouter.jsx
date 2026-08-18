@@ -3,22 +3,34 @@ import { Route, Routes } from 'react-router-dom'
 const Login = lazy(()=> import('../pages/auth/Login'))
 const Register = lazy(()=> import('../pages/auth/Register'))
 const ForgetPassword = lazy(()=> import('../pages/auth/ForgetPassword'))
+const Home = lazy(()=> import('../pages/common/Home'))
+const RoomsAndSuits = lazy(()=> import('../pages/common/RoomsAndSuits'))
+const About = lazy(()=> import('../pages/common/About'))
+const Contact = lazy(()=> import('../pages/common/Contact'))
 
-const Home = lazy(()=> import('../pages/comman/Home'))
-const About = lazy(()=> import('../pages/comman/About'))
+const Footer = lazy(()=> import('../ui/Footer'))
+const Navbar = lazy(()=> import('../ui/Navbar'))
+
 
 const AppRouter = () => {
   return (
-      <Routes>
-            
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/forgot-password" element={<ForgetPassword/>} />
 
+      <>
+      <div className="">
+        <Navbar/>
+        <Routes>
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/forgot-password" element={<ForgetPassword/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/rooms-suites" element={<RoomsAndSuits/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<Contact/>} />
+        </Routes>
+        <Footer/>
+      </div>
+      </>
 
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-      </Routes>
   )
 }
 

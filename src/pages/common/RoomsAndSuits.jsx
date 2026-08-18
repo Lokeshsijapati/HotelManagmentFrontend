@@ -1,15 +1,15 @@
 import { FaChevronLeft, FaChevronRight, FaFeatherAlt, FaHotel } from 'react-icons/fa'
-import Hero from '../../component/comman/Hero'
+import Hero from '../../component/common/Hero'
 import { flower_Image } from '../../assets'
-import RoomCard from '../../component/comman/RoomCard';
+import RoomCard from '../../component/common/RoomCard';
 import Rooms from '../../config/Room.json';
 import { useNavigate } from 'react-router-dom';
 import Amenities from '../../config/Amenities.json'
-import ReviewCard from '../../component/comman/Review';
+import ReviewCard from '../../component/common/Review';
 import reviewData from '../../config/Review.json'
 import { useRef } from 'react';
 
-const Home = () => {
+const RoomsAndSuits = () => {
 
   const handleFavoriteToggle = (roomId) => {
     console.log(`Toggled favorite for room ${roomId}`);
@@ -173,4 +173,4 @@ const Home = () => {
   ) 
 }
 
-export default Home
+export default RoomsAndSuits
