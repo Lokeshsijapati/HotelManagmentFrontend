@@ -62,9 +62,9 @@ const RoomPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Main Content */}
+
       <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Image Gallery */}
+
         <div className="relative mb-8 rounded-2xl overflow-hidden shadow-lg">
           <img 
             src={room.image} 
@@ -84,9 +84,7 @@ const RoomPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Details */}
           <div className="lg:col-span-2">
-            {/* Title Section */}
             <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                 <div>
@@ -109,7 +107,6 @@ const RoomPage = () => {
                 </div>
               </div>
 
-              {/* Availability Status */}
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold ${
                 room.isAvailable 
                   ? 'bg-green-100 text-green-800' 
@@ -126,8 +123,6 @@ const RoomPage = () => {
                 )}
               </div>
             </div>
-
-            {/* Description */}
             <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
                 <FaMapMarkerAlt className="text-blue-600" /> Description
@@ -135,7 +130,6 @@ const RoomPage = () => {
               <p className="text-gray-600 leading-relaxed">{room.description}</p>
             </div>
 
-            {/* Amenities */}
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
                 <FaCheckCircle className="text-green-500" /> Amenities
@@ -154,7 +148,6 @@ const RoomPage = () => {
             </div>
           </div>
 
-          {/* Right Column - Booking Card */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
               <div className="border-b pb-4 mb-4">
@@ -172,7 +165,6 @@ const RoomPage = () => {
                 </div>
               </div>
 
-              {/* Booking Form */}
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -219,7 +211,6 @@ const RoomPage = () => {
                 </p>
               </div>
 
-              {/* Contact Info */}
               <div className="mt-6 pt-4 border-t">
                 <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
                   <span className="flex items-center gap-1">
@@ -233,8 +224,6 @@ const RoomPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Similar Rooms Section (Optional) */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">You Might Also Like</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

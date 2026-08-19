@@ -46,7 +46,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top bar remains the same */}
       <div 
         className={`bg-amber-600 text-white text-sm py-1.5 px-4 sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -73,7 +72,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navigation */}
       <nav 
         className={`bg-white shadow-md sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -89,7 +87,6 @@ const Navbar = () => {
               </span>
             </NavLink>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <ul className="flex items-center gap-8">
                 <li>
@@ -143,7 +140,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
               className="md:hidden text-gray-700 hover:text-amber-600 transition-colors ml-auto"
@@ -156,7 +152,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           <div
             className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
               isOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0"
