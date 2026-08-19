@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // Change this import
 import {
-  FaHotel,
   FaBars,
   FaTimes,
   FaUser,
-  FaSearch,
   FaBell,
   FaPhone,
   FaClock,
@@ -27,10 +25,8 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        // Scrolling down - hide navbar
         setIsVisible(false);
       } else {
-        // Scrolling up - show navbar
         setIsVisible(true);
       }
       
@@ -44,9 +40,13 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
+  // Active link styling function
+  const getActiveClass = ({ isActive }) => 
+    isActive ? "text-amber-600 font-semibold" : "text-gray-600 hover:text-amber-600 transition-colors font-medium";
+
   return (
     <>
-     
+      {/* Top bar remains the same */}
       <div 
         className={`bg-amber-600 text-white text-sm py-1.5 px-4 sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -73,6 +73,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Main Navigation */}
       <nav 
         className={`bg-white shadow-md sticky top-0 z-50 transition-transform duration-300 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -81,76 +82,68 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex justify-between items-center h-16 md:h-20">
-            <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+            <NavLink to="/" className="flex items-center gap-2 flex-shrink-0">
               <MdOutlineLocalHotel className="text-amber-600 text-2xl md:text-3xl" />
               <span className="text-xl md:text-2xl font-bold text-gray-800 whitespace-nowrap">
                 Hotel<span className="text-amber-600">Manager</span>
               </span>
-            </Link>
+            </NavLink>
 
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <ul className="flex items-center gap-8">
                 <li>
-                  <Link
+                  <NavLink
                     to="/"
-                    className="text-gray-600 hover:text-amber-600 transition-colors font-medium"
+                    className={getActiveClass}
+                    end
                   >
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/rooms-suites"
-                    className="text-gray-600 hover:text-amber-600 transition-colors font-medium"
+                    className={getActiveClass}
                   >
                     Rooms & Suits
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
-                    to="/bookings"
-                    className="text-gray-600 hover:text-amber-600 transition-colors font-medium"
-                  >
-                    Room Bookings
-                  </Link>
-                </li>
-                <li>
-                  <Link
+                  <NavLink
                     to="/about"
-                    className="text-gray-600 hover:text-amber-600 transition-colors font-medium"
+                    className={getActiveClass}
                   >
                     About
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/contact"
-                    className="text-gray-600 hover:text-amber-600 transition-colors font-medium"
+                    className={getActiveClass}
                   >
                     Contact
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
 
               <div className="flex items-center gap-4">
-                <button className="text-gray-600 hover:text-amber-600 transition-colors">
-                  <FaSearch className="text-lg" />
-                </button>
                 <button className="text-gray-600 hover:text-amber-600 transition-colors relative">
                   <FaBell className="text-lg" />
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
                     3
                   </span>
                 </button>
-                <Link to="/login">
+                <NavLink to="/login">
                   <button className="bg-amber-600 text-white px-5 py-2 rounded-lg hover:bg-amber-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 text-sm font-semibold">
                     <FaUser />
                     Sign In
                   </button>
-                </Link>
+                </NavLink>
               </div>
             </div>
 
+            {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
               className="md:hidden text-gray-700 hover:text-amber-600 transition-colors ml-auto"
@@ -163,7 +156,7 @@ const Navbar = () => {
             </button>
           </div>
 
-         
+          {/* Mobile Menu */}
           <div
             className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
               isOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0"
@@ -171,49 +164,65 @@ const Navbar = () => {
           >
             <ul className="flex flex-col gap-3">
               <li>
-                <Link
+                <NavLink
                   to="/"
-                  className="block text-gray-600 hover:text-amber-600 transition-colors font-medium py-2 px-3 hover:bg-amber-50 rounded-lg"
+                  className={({ isActive }) => 
+                    `block font-medium py-2 px-3 hover:bg-amber-50 rounded-lg transition-colors ${
+                      isActive 
+                        ? "text-amber-600 font-semibold bg-amber-50" 
+                        : "text-gray-600 hover:text-amber-600"
+                    }`
+                  }
                   onClick={toggleMenu}
+                  end
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/rooms-suites"
-                  className="block text-gray-600 hover:text-amber-600 transition-colors font-medium py-2 px-3 hover:bg-amber-50 rounded-lg"
+                  className={({ isActive }) => 
+                    `block font-medium py-2 px-3 hover:bg-amber-50 rounded-lg transition-colors ${
+                      isActive 
+                        ? "text-amber-600 font-semibold bg-amber-50" 
+                        : "text-gray-600 hover:text-amber-600"
+                    }`
+                  }
                   onClick={toggleMenu}
                 >
                   Rooms & Suits
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
-                  to="/bookings"
-                  className="block text-gray-600 hover:text-amber-600 transition-colors font-medium py-2 px-3 hover:bg-amber-50 rounded-lg"
-                  onClick={toggleMenu}
-                >
-                  Room Bookings
-                </Link>
-              </li>
-              <li>
-                <Link
+                <NavLink
                   to="/about"
-                  className="block text-gray-600 hover:text-amber-600 transition-colors font-medium py-2 px-3 hover:bg-amber-50 rounded-lg"
+                  className={({ isActive }) => 
+                    `block font-medium py-2 px-3 hover:bg-amber-50 rounded-lg transition-colors ${
+                      isActive 
+                        ? "text-amber-600 font-semibold bg-amber-50" 
+                        : "text-gray-600 hover:text-amber-600"
+                    }`
+                  }
                   onClick={toggleMenu}
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/contact"
-                  className="block text-gray-600 hover:text-amber-600 transition-colors font-medium py-2 px-3 hover:bg-amber-50 rounded-lg"
+                  className={({ isActive }) => 
+                    `block font-medium py-2 px-3 hover:bg-amber-50 rounded-lg transition-colors ${
+                      isActive 
+                        ? "text-amber-600 font-semibold bg-amber-50" 
+                        : "text-gray-600 hover:text-amber-600"
+                    }`
+                  }
                   onClick={toggleMenu}
                 >
                   Contact
-                </Link>
+                </NavLink>
               </li>
               <li className="pt-2 border-t border-gray-100">
                 <div className="flex flex-col gap-3">
@@ -229,12 +238,12 @@ const Navbar = () => {
                       <span>+1 (800) 123-4567</span>
                     </div>
                   </div>
-                  <Link to="/login" onClick={toggleMenu}>
+                  <NavLink to="/login" onClick={toggleMenu}>
                     <button className="bg-amber-600 text-white px-6 py-2.5 rounded-lg hover:bg-amber-700 transition-all duration-300 shadow-md flex items-center justify-center gap-2 text-sm font-semibold w-full">
                       <FaUser />
                       Sign In
                     </button>
-                  </Link>
+                  </NavLink>
                 </div>
               </li>
             </ul>
